@@ -1,0 +1,282 @@
+/* Variabel CSS untuk kemudahan perubahan warna */
+:root {
+    --main-bg: #1c524f; /* Warna hijau gelap utama */
+    --panel-bg: #2d7974; /* Warna panel/card */
+    --text-light: #e0e0e0;
+    --text-dark: #333;
+    --completed-color: #4CAF50; /* Hijau */
+    --progress-color: #2196F3; /* Biru */
+    --not-started-color: #F44336; /* Merah */
+}
+
+/* 1. RESET DAN TATA LETAK UTAMA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* 2. NAVBAR ATAS */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Sedikit lebih cerah */
+}
+
+.navbar nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    opacity: 0.8;
+}
+
+.log-out {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* 3. MAIN CONTENT (GRID 2 KOLOM) */
+.main-content {
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Kolom kiri (Task List) tetap, Kolom kanan fleksibel */
+    gap: 20px;
+}
+
+/* 4. PANEL KIRI: DAFTAR TUGAS */
+.task-list-panel {
+    background-color: transparent; /* Kolom kiri tanpa background panel penuh */
+    padding-right: 10px; /* Jarak dari panel kanan */
+}
+
+.task-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.add-task-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.7;
+}
+
+.task-card {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid; /* Placeholder untuk warna prioritas/status */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Untuk gambar kecil di kanan */
+}
+
+/* Atur warna border-left sesuai status atau prioritas */
+.task-card:nth-child(2) { border-left-color: var(--progress-color); } /* In Progress */
+.task-card:nth-child(3) { border-left-color: var(--not-started-color); } /* Not Started */
+
+.task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-desc {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.task-meta span {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+/* 5. PANEL KANAN (KALENDER & DASHBOARD) */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 5.1. KALENDER */
+.calendar-panel {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.nav-arrows .arrow {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.calendar-grid {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendar-grid th, .calendar-grid td {
+    padding: 10px 5px;
+    font-size: 14px;
+}
+
+.calendar-grid th {
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.calendar-grid td.inactive {
+    opacity: 0.3;
+}
+
+/* 5.2. DASHBOARD BAWAH */
+.dashboard-panel {
+    display: flex;
+    gap: 20px;
+}
+
+/* Progress Rings Container */
+.progress-indicators {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    flex-basis: 50%;
+}
+
+.progress-ring {
+    text-align: center;
+    padding: 10px;
+    width: 100px; /* Ukuran cincin */
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+    /* Membuat efek cincin dengan border dan conic-gradient (modern) */
+    background: conic-gradient(
+        transparent 0%, transparent 100%
+    ); /* Ini hanya placeholder, perlu kustomisasi lebih lanjut untuk tampilan cincin yang akurat */
+    
+    /* Ganti background ini untuk tampilan cincin yang lebih sederhana */
+    /* border: 10px solid #285d59; */
+}
+
+/* Penyesuaian warna progres */
+.progress-ring:nth-child(1) { 
+    color: var(--completed-color);
+    background: radial-gradient(white 50%, transparent 51%), conic-gradient(var(--completed-color) 84%, #285d59 0%);
+}
+.progress-ring:nth-child(2) { 
+    color: var(--progress-color);
+    background: radial-gradient(white 50%, transparent 51%), conic-gradient(var(--progress-color) 46%, #285d59 0%);
+}
+.progress-ring:nth-child(3) { 
+    color: var(--not-started-color);
+    background: radial-gradient(white 50%, transparent 51%), conic-gradient(var(--not-started-color) 13%, #285d59 0%);
+}
+
+
+.percentage {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-light); /* Warna teks di tengah */
+}
+
+.label {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+
+/* Notifikasi/Billing */
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-basis: 50%;
+}
+
+.notification-card {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-left: 4px solid #fff; /* Placeholder, bisa disesuaikan */
+}
+
+.notification-card .title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.notification-card .detail {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* Penyesuaian spesifik */
+.notification-card.billing {
+    border-left-color: #f7a73e; /* Contoh warna oranye/kuning untuk billing */
+}
+.notification-card.reminder {
+    border-left-color: var(--not-started-color); /* Contoh warna merah untuk reminder/cancel */
+}
+
+/* Media Query Dasar (untuk layar kecil, agar tidak terlalu berantakan) */
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr; /* Kolom tunggal */
+    }
+    .dashboard-panel {
+        flex-direction: column;
+    }
+    .progress-indicators {
+        justify-content: center;
+    }
+}

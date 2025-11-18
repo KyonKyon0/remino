@@ -1,16 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Task and Calendar Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo">R</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Calendar</a>
+                <a href="#">Task</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="log-out">Log Out</div>
+        </header>
+
+        <main class="main-content">
+            
+            <section class="task-list-panel">
+                <div class="task-list-header">
+                    <span class="date">20 June - **Today**</span>
+                    <button class="add-task-btn">Add task</button>
+                </div>
+                
+                <article class="task-card">
+                    <div class="task-info">
+                        <div class="task-title">Attend Nischal's Birthday Party</div>
+                        <p class="task-desc">Buy gifts on the way and pick up cake from the bakery. (6 PM | Fresh Elements)...</p>
+                    </div>
+                    <div class="task-meta">
+                        <span>Priority: **High**</span>
+                        <span>Status: **Not Started**</span>
+                        <span>Created on: 28/06/2023</span>
+                    </div>
+                    </article>
+
+                <article class="task-card">
+                    <div class="task-info">
+                        <div class="task-title">Landing Page Design for TravelDays</div>
+                        <p class="task-desc">Get the work done by EGO and discuss with client before leaving. (4 PM | Meeting Room)</p>
+                    </div>
+                    <div class="task-meta">
+                        <span>Priority: **Medium**</span>
+                        <span>Status: **In Progress**</span>
+                        <span>Created on: 23/04/2023</span>
+                    </div>
+                    </article>
+
+                <article class="task-card">
+                    <div class="task-info">
+                        <div class="task-title">Presentation on Final Product</div>
+                        <p class="task-desc">Make sure everything is functioning and all the necessities are properly met. Prepare the team and get the documents ready for...</p>
+                    </div>
+                    <div class="task-meta">
+                        <span>Priority: **High**</span>
+                        <span>Status: **In Progress**</span>
+                        <span>Created on: 10/02/2023</span>
+                    </div>
+                    </article>
+
+            </section>
+
+            <section class="right-panel">
+
+                <div class="calendar-panel">
+                    <div class="calendar-header">
+                        <h2>January 2022</h2>
+                        <div class="nav-arrows">
+                            <span class="arrow">&lt;</span>
+                            <span class="arrow">&gt;</span>
+                        </div>
+                    </div>
+                    <table class="calendar-grid">
+                        <thead>
+                            <tr>
+                                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="inactive">29</td><td class="inactive">30</td><td class="inactive">31</td><td>1</td><td>2</td><td>3</td><td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+                            </tr>
+                            <tr>
+                                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="inactive">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="dashboard-panel">
+                    <div class="progress-indicators">
+                        <div class="progress-ring">
+                            <span class="percentage">84%</span>
+                            <span class="label">Completed</span>
+                        </div>
+                        <div class="progress-ring">
+                            <span class="percentage">46%</span>
+                            <span class="label">In Progress</span>
+                        </div>
+                        <div class="progress-ring">
+                            <span class="percentage">13%</span>
+                            <span class="label">Not Started</span>
+                        </div>
+                    </div>
+
+                    <div class="notifications">
+                        <div class="notification-card billing">
+                            <p class="title">BILLING - KOS KAMAR</p>
+                            <p class="detail">Mascaras faucibus mollis interdum.</p>
+                        </div>
+                        <div class="notification-card reminder">
+                            <p class="title">PENGINGAT OBAT HARIAN</p>
+                            <p class="detail">Status: Cancel</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
 </body>
 </html>
-<script src="script.js"></script>
-<script>
-    console.log('This is the main HTML file.');
-</script>
-
