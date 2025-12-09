@@ -3,21 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="task.css" />
-  <title>Task Page</title>
+  <link rel="stylesheet" href="style/task.css" />
+  <title>Remino - Task Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="nav-left">
-      <h1 class="logo">R</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#" class="active">Task</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-    <button class="logout-btn">Log Out</button>
-  </header>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <img src="asset/Logo tanpa Background ada buletan.png" alt="Remino Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#" class="active">Task</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="logout-btn">
+                <i class="fas fa-user-circle"></i> Log Out
+            </a>
+        </div>
+    </nav>
 
   <main class="task-container">
     <section class="form-section">
