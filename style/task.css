@@ -1,0 +1,212 @@
+/* Import Font Poppins (Sama seperti Login) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #016B61;       /* Background Utama */
+    --secondary-color: #56A7A0;     /* Warna Aksen Teal Terang */
+    --card-bg: rgba(0, 0, 0, 0.2);  /* Background transparan untuk kartu task */
+    --glass-bg: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(170,220,220,0.9) 100%); /* Efek Glossy user card */
+    --text-light: #ffffff;
+    --text-dark: #2c2c2c;
+    --nav-height: 70px;
+}
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* --- Navbar --- */
+.navbar {
+    height: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.1); /* Sedikit gelap transparan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-logo img {
+    height: 40px; /* Sesuaikan ukuran logo */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+
+.logout-btn {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent; /* Sesuaikan jika ingin background tombol */
+}
+
+/* MAIN GRID */
+.task-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 35px;
+  padding: 40px 50px;
+}
+
+/* FORM SECTION */
+.form-section {
+  background: rgba(86, 167, 160, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+}
+
+.add-contact-btn {
+  width: 100%;
+  height: 55px;
+  background: #39dd9f;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.add-contact-btn:hover {
+  background: #18c788;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: white;
+  color: black;
+}
+
+.task-form textarea {
+  height: 90px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(to right, #00ff73, #39ff14);
+  padding: 14px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.selected-contact {
+  margin-top: 15px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+}
+
+/* CONTACT LIST SECTION */
+.contact-section {
+  background: rgba(46, 134, 128, 0.65);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  background: white;
+  color: black;
+  font-size: 15px;
+}
+
+.contact-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-row,
+.contact-row.header {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.contact-row.header {
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .task-container {
+    grid-template-columns: 1fr;
+  }
+}
