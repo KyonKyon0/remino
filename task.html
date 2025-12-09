@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style/task.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Remino - Task</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <img src="asset/Logo tanpa Background ada buletan.png" alt="Remino Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#" class="active">Task</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="logout-btn">
+                <i class="fas fa-user-circle"></i> Log Out
+            </a>
+        </div>
+    </nav>
+
+  <main class="task-container">
+    <section class="form-section">
+      <button class="add-contact-btn">ADD CONTACT</button>
+
+      <form class="task-form">
+        <label>New Task</label>
+        <input type="text" placeholder="Title" />
+
+        <label>Date</label>
+        <input type="date" />
+
+        <label>Jam</label>
+        <input type="time" />
+
+        <label>Pesan</label>
+        <textarea placeholder="Value"></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+
+      <div class="selected-contact">CONTACT SELECTED: XX</div>
+    </section>
+
+    <section class="contact-section">
+      <h2 class="title">CONTACT LIST</h2>
+      <input class="search-box" type="text" placeholder="Search" />
+
+      <div class="contact-table">
+        <div class="contact-row header">
+          <span>Name</span>
+          <span>Contact</span>
+          <span>Gmail</span>
+        </div>
+
+        <div class="contact-row">
+          <span>Elvis Moren</span>
+          <span>Product Design Team</span>
+          <span>09:30AM</span>
+          <span>ON DUTY</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

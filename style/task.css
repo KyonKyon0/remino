@@ -1,0 +1,219 @@
+/* Import Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variabel dari Contact.css */
+:root {
+    --primary-color: #016B61;       /* Background Utama */
+    --secondary-color: #56A7A0;     /* Warna Aksen Teal Terang */
+    --card-bg: rgba(0, 0, 0, 0.2);  /* Background transparan untuk kartu task */
+    --glass-bg: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(170,220,220,0.9) 100%); /* Efek Glossy user card */
+    --text-light: #ffffff;
+    --text-dark: #2c2c2c;
+    --nav-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar --- */
+.navbar {
+    height: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.1); /* Sedikit gelap transparan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-logo img {
+    height: 40px; /* Sesuaikan ukuran logo */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent; /* Sesuaikan jika ingin background tombol */
+}
+
+/* MAIN LAYOUT (Diselaraskan dari langkah sebelumnya) */
+.task-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 25px;
+  padding: 25px;
+  flex-grow: 1;
+}
+
+/* FORM SECTION */
+.form-section {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 550px;
+}
+
+.add-contact-btn {
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-contact-btn:hover {
+  background-color: #005a52;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+.task-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.submit-btn {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: yellow;
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+
+  border: 2px solid var(--text-dark);
+  box-shadow: none;
+  transition: transform 0.1s;
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+.selected-contact {
+  margin-top: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 12px;
+}
+
+/* CONTACT LIST SECTION */
+.contact-section {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 14px;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.contact-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-row,
+.contact-row.header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+}
+
+.contact-row.header {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .task-container {
+    grid-template-columns: 1fr;
+  }
+}
