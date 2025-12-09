@@ -1,0 +1,219 @@
+* {
+  font-family: Arial, sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #016B61;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #56A7A0;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left span, .nav-right span {
+  margin-right: 25px;
+  font-weight: normal;
+}
+
+.nav-icon {
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* PERBESAR logo di nav-left */
+.nav-left .nav-icon {
+  width: 32px;
+}
+
+
+/* MAIN */
+.container {
+  display: flex;
+  padding: 25px;
+  gap: 25px;
+}
+
+/* CONTACT LIST */
+.contact-list {
+  flex: 2;
+  background: #56A7A0;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.contact-header input {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+}
+
+.contact-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+/* LIST GARIS + KOTAK */
+.contact-item {
+  display: grid;
+  grid-template-columns: 20px 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #016B61;
+}
+
+
+/* ADD CONTACT */
+.add-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* HEADER TERPISAH */
+.add-header {
+  background: #56A7A0;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* FORM TANPA OUTLINE */
+.add-box {
+  background: #56A7A0;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-box input,
+.add-box textarea {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* SUBMIT TANPA BAYANGAN + OUTLINE */
+.shadow-submit {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #016B61;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+
+  border: 2px solid black;
+  box-shadow: none;
+}
+
+.shadow-submit:active {
+  transform: scale(0.97);
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.search-wrapper input {
+  padding-right: 38px; /* ruang untuk ikon */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;   /* ukuran ikon */
+  height: auto;
+  pointer-events: none; /* biar tidak mengganggu klik input */
+}
+
+.contact-list, .add-container {
+  min-height: 550px;  /* boleh disesuaikan */
+}
+
+.contact-column span,
+.contact-item > div {
+  text-align: left;
+}
+
+.contact-item > div:nth-child(2),
+.contact-item > div:nth-child(3),
+.contact-item > div:nth-child(4) {
+  padding-left: 10px;
+}
+
+.contact-column span {
+  padding-left: 10px;
+}
+
+/* Header kolom (Name, Nomor Telepon, Gmail) */
+.contact-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 kolom */
+  font-size: 13px;
+  margin-bottom: 15px;
+  padding-left: 20px; /* agar sejajar dengan item */
+}
+
+/* Record item */
+.contact-item {
+  display: grid;
+  grid-template-columns: 20px 1fr 1fr 1fr; /* dot + 3 kolom */
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #016B61;
+}
+
+/* Buat field dan value sejajar */
+.contact-item > div:nth-child(2),
+.contact-item > div:nth-child(3),
+.contact-item > div:nth-child(4) {
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Letak kaca pembesar di dalam kotak pencarian */
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-box input {
+  padding-right: 38px; /* ruang untuk ikon */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;   /* ukuran ikon */
+  height: auto;
+  pointer-events: none; /* biar tidak mengganggu klik input */
+}
+
