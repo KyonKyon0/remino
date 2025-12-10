@@ -34,7 +34,7 @@ func sendEmailResend(to string, subject string, html string) error {
 	apiKey := "re_5JK3SmJT_8HrWAdnKm2s6bRet8RBs7LJ1" // <-- GANTI DENGAN API KEY RESEND ANDA
 
 	body := ResendEmailRequest{
-		From:    "My App <onboarding@resend.dev>", // wajib pakai ini kalau belum verifikasi domain
+		From:    "Remino <onboarding@resend.dev>", // wajib pakai ini kalau belum verifikasi domain
 		To:      []string{to},
 		Subject: subject,
 		HTML:    html,
@@ -105,3 +105,4 @@ func main() {
 	fmt.Println("Server berjalan di http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
+
