@@ -69,24 +69,22 @@
     </div>
 
     <!-- FORM -->
-    <form class="add-box" action="database/contact.php" method="POST">
+    <form class="contact-form" method="POST" action="database/contact.php">
+      <div class="add-box">
+        <label> Nama </label>
+        <input type="text"  id="NAMA" name="NAMA" placeholder="Enter your Contact Name" required>
 
-      <label>No Whatsapp</label>
-      <input type="text" name="WHATSAPP" placeholder="Value" required>
+        <label>No Telepon</label>
+        <input type="text"  id="TELEPON" name="TELEPON"  placeholder="Enter your Contact Number" required>
 
-      <label>Tanggal</label>
-      <input type="date" name="TANGGAL" required>
+        <label>Gmail</label>
+        <input type="email"  id="GMAIL" name="GMAIL" placeholder="Enter your Contact Gmail" required>
 
-      <label>Gmail</label>
-      <input type="email" name="GMAIL" placeholder="Value" required>
+        <!-- SUBMIT -->
+        <button class="shadow-submit" type="submit" >Submit</button>
 
-      <label>Noted</label>
-      <textarea name="NOTED" placeholder="Value"></textarea>
-
-      <button class="shadow-submit" type="submit">Submit</button>
-
-    </form>
-
+      </div>
+    </form>   
 
   </div>
 
@@ -94,4 +92,3 @@
 
 </body>
 </html>
-
