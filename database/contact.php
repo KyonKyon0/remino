@@ -1,6 +1,7 @@
 <?php
 // insert_contact.php
 
+session_start();
 // 1. Panggil koneksi database
 require_once 'db.php';
 
@@ -8,28 +9,26 @@ require_once 'db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ambil data dari form
-    $whatsapp = $_POST['WHATSAPP'];
-    $tanggal  = $_POST['TANGGAL'];
+    $nama = $_POST['NAMA'];
+    $telepon = $_POST['TELEPON'];
     $gmail    = $_POST['GMAIL'];
-    $noted    = $_POST['NOTED'];
 
     try {
         // 3. Query SQL menggunakan prepared statement (aman dari SQL Injection)
-        $sql = "INSERT INTO contacts (WHATSAPP, TANGGAL, GMAIL, NOTED) 
-                VALUES (:WHATSAPP, :TANGGAL, :GMAIL, :NOTED)";
+        $sql = "INSERT INTO contact (NAMA, TELEPON, GMAIL) 
+                VALUES (:NAMA, :TELEPON, :GMAIL)";
         
         $stmt = $conn->prepare($sql);
 
         // 4. Eksekusi
         $stmt->execute([
-            ':WHATSAPP' => $whatsapp,
-            ':TANGGAL'  => $tanggal,
+            ':NAMA' => $nama,
+            ':TELEPON'  => $telepon,
             ':GMAIL'    => $gmail,
-            ':NOTED'    => $noted
         ]);
 
         // 5. Redirect setelah berhasil simpan
-        echo "<script>alert('Berhasil Menambahkan kontak'); window.location.href='../contact_list.html';</script>";
+        echo "<script>alert('Berhasil Menambahkan kontak'); window.location.href='../contact.html';</script>";
         exit();
 
     } catch (PDOException $e) {
