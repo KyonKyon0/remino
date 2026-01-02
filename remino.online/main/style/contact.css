@@ -1,11 +1,10 @@
-/* Import Font Poppins (Sama seperti Login) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #016B61;       /* Background Utama */
-    --secondary-color: #56A7A0;     /* Warna Aksen Teal Terang */
-    --card-bg: rgba(0, 0, 0, 0.2);  /* Background transparan untuk kartu task */
-    --glass-bg: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(170,220,220,0.9) 100%); /* Efek Glossy user card */
+    --primary-color: #016B61;
+    --secondary-color: #56A7A0;
+    --card-bg: rgba(0, 0, 0, 0.2);
+    --glass-bg: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(170,220,220,0.9) 100%);
     --text-light: #ffffff;
     --text-dark: #2c2c2c;
     --nav-height: 70px;
@@ -26,10 +25,10 @@ body {
     flex-direction: column;
 }
 
-/* --- Navbar --- */
+/* NAVBAR */
 .navbar {
     height: var(--nav-height);
-    background-color: rgba(0, 0, 0, 0.1); /* Sedikit gelap transparan */
+    background-color: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +42,7 @@ body {
 }
 
 .nav-logo img {
-    height: 40px; /* Sesuaikan ukuran logo */
+    height: 100px;
     width: auto;
 }
 
@@ -61,199 +60,164 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a.active, .nav-links a:hover {
+.nav-links a.active,
+.nav-links a:hover {
     opacity: 1;
     font-weight: 700;
 }
 
-.logout-btn {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent; /* Sesuaikan jika ingin background tombol */
-}
-
 /* MAIN */
 .container {
-  display: flex;
-  padding: 25px;
-  gap: 25px;
+    display: flex;
+    padding: 25px;
+    gap: 25px;
 }
 
 /* CONTACT LIST */
 .contact-list {
-  flex: 2;
-  background: #56A7A0;
-  border-radius: 14px;
-  padding: 20px;
+    flex: 2;
+    background: #56A7A0;
+    border-radius: 14px;
+    padding: 20px;
+    min-height: 550px;
 }
 
 .contact-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 .contact-header input {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
 }
 
+/* HEADER GRID */
 .contact-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-size: 13px;
-  margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr 100px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    padding-left: 40px;
+    font-weight: bold;
 }
 
-/* LIST GARIS + KOTAK */
+/* ITEM GRID */
 .contact-item {
-  display: grid;
-  grid-template-columns: 20px 1fr 1fr 1fr;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 2px solid #016B61;
+    display: grid;
+    grid-template-columns: 20px 2fr 2fr 1.5fr 100px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 14px;
 }
 
+.contact-list-container {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
 
 /* ADD CONTACT */
 .add-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 550px;
 }
 
-/* HEADER TERPISAH */
 .add-header {
-  background: #56A7A0;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  border-radius: 12px;
-  font-weight: bold;
+    background: #56A7A0;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
 }
 
-/* FORM TANPA OUTLINE */
 .add-box {
-  background: #56A7A0;
-  border-radius: 14px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
+    background: #56A7A0;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .add-box input,
 .add-box textarea {
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: none;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    color: var(--text-dark);
 }
 
-/* SUBMIT TANPA BAYANGAN + OUTLINE */
+/* SUBMIT */
 .shadow-submit {
-  margin-top: 18px;
-  padding: 12px;
-  border-radius: 10px;
-  background-color: #016B61;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-
-  border: 2px solid black;
-  box-shadow: none;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
 }
 
 .shadow-submit:active {
-  transform: scale(0.97);
+    transform: scale(0.97);
 }
 
-.search-wrapper {
-  position: relative;
-  display: inline-block;
+/* ACTION ICON */
+.contact-item .action {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.search-wrapper input {
-  padding-right: 38px; /* ruang untuk ikon */
+.contact-item i {
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 22px;   /* ukuran ikon */
-  height: auto;
-  pointer-events: none; /* biar tidak mengganggu klik input */
+.contact-item .fa-pen {
+    color: #ffffff;
+    opacity: 0.75;
 }
 
-.contact-list, .add-container {
-  min-height: 550px;  /* boleh disesuaikan */
+.contact-item .fa-pen:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-.contact-column span,
-.contact-item > div {
-  text-align: left;
+.contact-item .fa-trash {
+    color: #ffd2d2;
+    opacity: 0.7;
 }
 
-.contact-item > div:nth-child(2),
-.contact-item > div:nth-child(3),
-.contact-item > div:nth-child(4) {
-  padding-left: 10px;
+.contact-item .fa-trash:hover {
+    color: #ff4d4d;
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-.contact-column span {
-  padding-left: 10px;
-}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-column {
+        grid-template-columns: 1.5fr 1fr 100px;
+    }
 
-/* Header kolom (Name, Nomor Telepon, Gmail) */
-.contact-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 kolom */
-  font-size: 13px;
-  margin-bottom: 15px;
-  padding-left: 20px; /* agar sejajar dengan item */
-}
+    .contact-item {
+        grid-template-columns: 20px 1.5fr 1fr 100px;
+    }
 
-/* Record item */
-.contact-item {
-  display: grid;
-  grid-template-columns: 20px 1fr 1fr 1fr; /* dot + 3 kolom */
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 2px solid #016B61;
-}
-
-/* Buat field dan value sejajar */
-.contact-item > div:nth-child(2),
-.contact-item > div:nth-child(3),
-.contact-item > div:nth-child(4) {
-  padding-left: 20px;
-  text-align: left;
-}
-
-/* Letak kaca pembesar di dalam kotak pencarian */
-.search-box {
-  position: relative;
-  display: inline-block;
-}
-
-.search-box input {
-  padding-right: 38px; /* ruang untuk ikon */
-}
-
-.search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 22px;   /* ukuran ikon */
-  height: auto;
-  pointer-events: none; /* biar tidak mengganggu klik input */
+    .contact-item > div:nth-child(4),
+    .contact-column span:nth-child(3) {
+        display: none;
+    }
 }
