@@ -1,0 +1,360 @@
+/* ------------------------------------------------------
+    CORPORATE UI CSS FOR REMINO (TASK DASHBOARD)
+    Premium Design – Level Stripe / Slack / Notion
+------------------------------------------------------- */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: #015e55; /* Hijau Tua Corporate */
+    --secondary-color: #5fafaa; /* Hijau Muda Background Card */
+    --accent-color: #ffe500; /* Kuning Aksen */
+    --card-bg: rgba(255,255,255,0.18);
+    --card-bg-strong: rgba(255,255,255,0.28);
+    --text-light: #ffffff;
+    --text-dark: #212121;
+    --radius: 14px;
+    --shadow-soft: 0px 4px 14px rgba(0,0,0,0.18);
+    --shadow-card: 0px 4px 24px rgba(0,0,0,0.15);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-light);
+}
+
+/* ------------------------------------------------------
+    NAVBAR CORPORATE
+------------------------------------------------------- */
+.navbar {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(0,0,0,0.16);
+    backdrop-filter: blur(6px);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-logo img {
+    width: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    opacity: 0.75;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.logout-btn {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: 0.25s;
+    background: transparent;
+}
+
+.logout-btn:hover {
+    opacity: 1;
+}
+
+/* ------------------------------------------------------
+    MAIN GRID LAYOUT
+------------------------------------------------------- */
+.task-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 28px;
+    padding: 28px;
+    flex-grow: 1;
+}
+
+/* ------------------------------------------------------
+    FORM SECTION
+------------------------------------------------------- */
+.form-section {
+    background: var(--secondary-color);
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.add-contact-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.add-contact-btn:hover {
+    background: #004c45;
+    transform: translateY(-2px);
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.task-form label {
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Input Style */
+.task-form input,
+.task-form select,
+.task-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--text-dark);
+    background: #ffffff;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1);
+    transition: 0.25s;
+}
+
+.task-form input:focus,
+.task-form select:focus,
+.task-form textarea:focus {
+    box-shadow: inset 0px 0px 0px 2px #2a62ff;
+}
+
+/* Submit button */
+.submit-btn {
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--accent-color); /* Menggunakan kuning aksen */
+    border: 2px solid var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------------------------------
+    TASK LIST SECTION
+------------------------------------------------------- */
+.contact-section {
+    background: var(--secondary-color);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: left; /* Mengubah ini menjadi kiri untuk tata letak yang lebih bersih */
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Search Container Styling */
+.search-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px;
+}
+
+.search-form {
+    position: relative; 
+    width: 250px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 45px 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-button {
+    position: absolute; 
+    right: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0;
+}
+
+.search-button img {
+    width: 18px; 
+    opacity: 0.5;
+}
+
+/* ------------------------------------------------------
+    SCROLLBAR STYLING (Dipindahkan dari PHP ke sini)
+------------------------------------------------------- */
+.list-container {
+    max-height: 400px; 
+    overflow-y: auto; 
+    padding-right: 5px;
+}
+
+.list-container::-webkit-scrollbar {
+    width: 8px;
+}
+.list-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.list-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.list-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ------------------------------------------------------
+    TABLE CORPORATE GRID (Re-arranged)
+------------------------------------------------------- */
+
+/* Mengganti header yang ada di PHP dengan kelas ini */
+.contact-row.header-task {
+    display: grid;
+    /* Grid baru: Task, Contact, Date/Time, Status, Action */
+    grid-template-columns: 1.8fr 1.6fr 1.5fr 0.8fr 140px; 
+    gap: 10px; 
+    margin-bottom: 10px; 
+    padding: 0 10px; /* Padding untuk menyelaraskan dengan row di bawah */
+    align-items: center;
+    font-weight: bold;
+}
+
+.contact-row.data-task {
+    display: grid;
+    /* Grid harus sama persis dengan header */
+    grid-template-columns: 1.8fr 1.6fr 1.5fr 0.8fr 140px;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.12); /* Background untuk setiap row data */
+    transition: background 0.25s;
+}
+
+.contact-row.data-task:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* Styling untuk konten dalam row */
+.contact-row.data-task span {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+/* Action column (Tombol Edit dan Delete) */
+.action-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.action-cell a {
+    font-weight: 600;
+    text-decoration: none;
+    padding: 4px 8px; /* Memberi sedikit area klik */
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+/* Mengubah warna link Edit & Delete agar lebih menyatu dengan corporate theme */
+.action-edit {
+    color: var(--text-light); /* Putih */
+    background: #007bff; /* Biru terang */
+    margin-right: 5px;
+}
+
+.action-edit:hover {
+    background: #005fcc; 
+}
+
+.action-delete {
+    color: var(--text-light); /* Putih */
+    background: #e74c3c; /* Merah tegas */
+}
+
+.action-delete:hover {
+    background: #c0392b; 
+}
+
+
+/* ------------------------------------------------------
+    RESPONSIVE
+------------------------------------------------------- */
+@media (max-width: 900px) {
+    .task-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-row.header-task,
+    .contact-row.data-task {
+        /* Sembunyikan Date/Time pada mobile agar tidak terlalu padat */
+        grid-template-columns: 1.5fr 1.3fr 1fr 120px; 
+    }
+}
