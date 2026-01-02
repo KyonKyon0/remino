@@ -1,6 +1,6 @@
 <?php
 // ========================
-// LOGIN.PHP - REMINO
+// LOGIN_2.PHP - REMINO
 // ========================
 
 // Tampilkan error (HAPUS di production)
@@ -22,11 +22,14 @@ if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true) {
     exit;
 }
 
-// Proses login
+// ========================
+// PROSES LOGIN
+// ========================
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $identifier = trim($_POST['GMAIL'] ?? '');
-    $password   = $_POST['PASSWORD'] ?? '';
+    // SESUAIKAN DENGAN FORM LOGIN_2
+    $identifier = trim($_POST['email'] ?? '');
+    $password   = $_POST['password'] ?? '';
 
     if ($identifier === "" || $password === "") {
         $error = "Form tidak boleh kosong!";
@@ -68,54 +71,75 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remino - Log In</title>
+    <title>Login - Remino</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
 <div class="container">
 
-    <!-- LEFT PANEL -->
-    <div class="welcome-panel">
-        <div class="logo-placeholder">
-            <img src="asset/Logo tanpa Background ada buletan.png" alt="logo-remino">
+<!-- LEFT -->
+   <div class="left-section">
+        <div class="left-content">
+
+            <!-- TOP -->
+            <h1 class="welcome-title">Welcome To</h1>
+
+            <!-- CENTER -->
+            <img src="../asset/Logo tanpa Background ada buletan.png" alt="logo-remino" class="logo-small">  
+
+            <!-- BOTTOM -->
+            <h2 class="welcome-brand">BY ICIKIWIR CORE TEAM</h2>
+
         </div>
-        <h1 class="welcome-title">WELCOME TO REMINO</h1>
-        <p class="welcome-subtitle">SMART REMINDING SYSTEM</p>
-        <p class="team-signature">By Icikiwir Core Team</p>
     </div>
 
-    <!-- RIGHT PANEL -->
-    <div class="login-panel">
+<!-- RIGHT -->
+<div class="right-section">
 
-        <div class="signup-link">
-            No Account? <a href="signup.php">Sign up</a>
-        </div>
+    <h1 class="title">Login</h1>
 
-        <h2 class="login-title">Log in</h2>
+    <?php if ($error): ?>
+        <div class="alert error"><?= htmlspecialchars($error) ?></div>
+    <?php endif; ?>
 
-        <!-- ERROR MESSAGE -->
-        <?php if (!empty($error)): ?>
-            <div style="color:red; margin-bottom:15px;">
-                <?= htmlspecialchars($error) ?>
-            </div>
-        <?php endif; ?>
+    <form method="POST">
 
-        <!-- LOGIN FORM -->
-        <form class="login-form" method="POST" action="">
-            <label for="GMAIL">Enter your username or email address</label>
-            <input type="text" id="GMAIL" name="GMAIL" placeholder="Username atau Email" required>
+        <label>Username or Email</label>
+        <input 
+            type="text" 
+            name="email"
+            placeholder="Username or Email"
+            required
+        >
 
-            <label for="PASSWORD">Enter your password</label>
-            <input type="password" id="PASSWORD" name="PASSWORD" placeholder="Password" required>
+        <label>Password</label>
+        <input 
+            type="password" 
+            name="password"
+            placeholder="Password"
+            required
+        >
 
-            <button type="submit" class="login-btn">Log in</button>
-        </form>
+        <button type="submit" class="btn-primary">
+            Login
+        </button>
 
-    </div>
+    </form>
+
+    <p class="back-login">
+        <a href="signup.php">No Account? Sign Up</a>
+    </p>
+    
+    <p class="back-login">
+        <a href="forgot_password.php">Forget Password?</a>
+    </p
+
 </div>
+</div>
+
 </body>
 </html>
