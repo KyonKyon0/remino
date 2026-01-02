@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    --primary-color: #016B61; /* Hijau gelap untuk latar belakang */
-    --secondary-color: #56A7A0; /* Hijau sedang untuk panel login */
+    --primary-color: #016B61;
+    --secondary-color: #56A7A0;
     --text-light: #ffffff;
     --text-dark: #2c2c2c;
-    --input-bg: #e0f2f1; /* Hijau sangat muda/putih kehijauan */
-    --button-primary: #00877a; /* Hijau tombol Log in */
+    --input-bg: #e0f2f1;
+    --button-primary: #00877a;
     --button-shadow: rgba(0, 0, 0, 0.2);
     --border-radius: 20px;
 }
@@ -30,7 +30,7 @@ body {
 
 .container {
     display: flex;
-    width: 900px; /* Lebar total container */
+    width: 900px;
     max-width: 95%;
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -45,10 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
 }
-
 
 .welcome-title {
     font-size: 2.2rem;
@@ -69,7 +66,7 @@ body {
     opacity: 0.7;
 }
 
-/* --- Panel Kanan: Login Form --- */
+/* --- Panel Kanan: Login --- */
 .login-panel {
     background-color: var(--secondary-color);
     width: 50%;
@@ -77,7 +74,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    border-radius: var(--border-radius) 0 0 var(--border-radius); /* Sudut sedikit melengkung seperti di gambar */
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .signup-link {
@@ -85,50 +82,30 @@ body {
     top: 20px;
     right: 20px;
     font-size: 0.9rem;
-    color: var(--text-light);
 }
 
-
+/* --- Logo --- */
 .logo-placeholder {
-    /* MENGHILANGKAN EFEK LINGKARAN PUTIH */
-    width: 300px; /* Atur lebar wadah untuk logo (Anda bisa coba nilai lain) */
-    height: 300px; /* Atur tinggi wadah untuk logo (Anda bisa coba nilai lain) */
-    background-color: transparent; /* Pastikan latar belakang transparan */
-    border-radius: 80; /* Menghilangkan efek bundar */
-    margin-bottom: 40px;
-    
-    display: flex; /* Untuk menengahkan gambar di dalamnya */
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow: visible; /* PENTING: Memastikan gambar tidak terpotong */
-    box-shadow: 10; /* Menghilangkan bayangan */
-}
-
-.logo-placeholder img {
-    /* Mengatur ukuran gambar agar pas di dalam wadah */
-    width: 100%; /* Gambar mengisi lebar wadah */
-    height: auto; /* Tinggi menyesuaikan proporsional */
-    object-fit: contain; /* PENTING: Memastikan seluruh gambar terlihat tanpa terpotong atau terdistorsi */
-    border-radius: 0;
-    display: block;
-}
-
-.signup-link a {
-    color: var(--text-light);
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: 5px;
-}
-
-.login-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-top: 30px;
+    width: 250px;
+    height: auto;
     margin-bottom: 30px;
-    color: var(--text-light);
+    display: flex;
+}
+.logo-placeholder img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-/* --- Form Styles --- */
+/* --- Login Title --- */
+.login-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* --- Form --- */
 .signup-form {
     display: flex;
     flex-direction: column;
@@ -158,15 +135,9 @@ body {
 .forgot-password {
     text-align: right;
     font-size: 0.85rem;
-    color: var(--text-light);
-    text-decoration: none;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.forgot-password:hover {
-    opacity: 1;
+    color: var(--text-light);
 }
 
 .login-btn {
@@ -179,46 +150,90 @@ body {
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.1s;
-    margin-top: 45px;
 }
 
-.login-btn:hover {
-    background-color: #016B61;
-}
+/* ============================================================
+   📱 RESPONSIVE: TABLET (max-width: 992px)
+   ============================================================ */
+@media (max-width: 992px) {
 
-/* Responsiveness */
-@media (max-width: 768px) {
     .container {
         flex-direction: column;
-        width: 100%;
-        margin: 20px;
+        width: 95%;
+        max-width: 600px;
     }
 
-    .welcome-panel, .login-panel {
+    .welcome-panel,
+    .login-panel {
         width: 100%;
+        border-radius: 0;
     }
 
     .welcome-panel {
         padding: 40px 30px;
-        align-items: center;
         text-align: center;
+        align-items: center;
+    }
+
+    .welcome-title {
+        font-size: 2rem;
     }
 
     .login-panel {
         padding: 40px 30px;
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
-    }
-    
-    .signup-link {
-        position: static;
-        margin-bottom: 20px;
-        text-align: right;
     }
 
     .login-title {
-        margin-top: 0;
+        font-size: 2rem;
+        text-align: center;
     }
 
-    
+    .logo-placeholder {
+        justify-content: center;
+        width: 200px;
+    }
+}
+
+/* ============================================================
+   📱 RESPONSIVE: HP (max-width: 600px)
+   ============================================================ */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        border-radius: 15px;
+    }
+
+    .welcome-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+
+    .login-title {
+        font-size: 1.8rem;
+    }
+
+    .login-panel {
+        padding: 30px 20px;
+    }
+
+    .signup-form input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .login-btn {
+        font-size: 1rem;
+        padding: 10px 14px;
+    }
+
+    .logo-placeholder {
+        width: 170px;
+    }
 }
