@@ -146,7 +146,7 @@ if (isset($_POST['check_otp'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password - Remino</title>
 
-    <link rel="stylesheet" href="style/forgot_password_02.css">
+    <link rel="stylesheet" href="style/forgot_password.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
