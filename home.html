@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remino - Home Page</title>
+    <link rel="stylesheet" href="style/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <img src="asset/Logo tanpa Background ada buletan.png" alt="Remino Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="task.html">Task</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="logout-btn">
+                <i class="fas fa-user-circle"></i> Log Out
+            </a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        
+        <div class="left-section">
+            <div class="hero-illustration">
+                <img src="asset/Elemen Home.png" alt="Smart Reminding Illustration">
+            </div>
+
+            <div class="hero-text">
+                <h1>SMART REMINDING SYSTEM</h1>
+                <p>By Icikiwir Core Team</p>
+            </div>
+
+            <div class="user-info-cards">
+                <div class="info-card">
+                    <div class="icon-box"><i class="fas fa-id-card"></i></div>
+                    <div class="card-text">
+                        <small>USER ID : ADMIN</small>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div class="card-text">
+                        <small>GMAIL : admin.remino@gmail.com</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="todo-header">
+                <h2>TO-DO List</h2>
+            </div>
+
+            <div class="task-list">
+                <div class="task-card">
+                    <div class="card-header">
+                        <span class="status-dot red"></span>
+                        <h3>Attend Nischal's Birthday Party</h3>
+                        <i class="fas fa-ellipsis-h more-opt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Buy gifts on the way and pick up cake from the bakery. (6 PM | Fresh Elements)...</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Priority: <span class="badge">Moderate</span></span>
+                        <span>Status: <span class="badge red-text">Not Started</span></span>
+                        <span class="date">Created on: 20/06/2023</span>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="card-header">
+                        <span class="status-dot blue"></span>
+                        <h3>Landing Page Design for TravelDays</h3>
+                        <i class="fas fa-ellipsis-h more-opt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Get the work done by EOD and discuss with client before leaving. (4 PM | Meeting Room)</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Priority: <span class="badge">Moderate</span></span>
+                        <span>Status: <span class="badge blue-text">In Progress</span></span>
+                        <span class="date">Created on: 20/06/2023</span>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="card-header">
+                        <span class="status-dot purple"></span>
+                        <h3>Presentation on Final Product</h3>
+                        <i class="fas fa-ellipsis-h more-opt"></i>
+                    </div>
+                    <div class="card-body">
+                        <p>Make sure everything is functioning and all the necessities are properly met.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Priority: <span class="badge">Moderate</span></span>
+                        <span>Status: <span class="badge purple-text">In Progress</span></span>
+                        <span class="date">Created on: 19/06/2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-widgets">
+                <div class="mini-widget">
+                    <div class="widget-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="widget-info">
+                        <span>UP COMING</span>
+                        <small>Status : XX / 100</small>
+                    </div>
+                </div>
+                <div class="mini-widget">
+                    <div class="widget-icon"><i class="fas fa-check-square"></i></div>
+                    <div class="widget-info">
+                        <span>FINISHED</span>
+                        <small>Status : XX/100</small>
+                    </div>
+                </div>
+            </div>
+
+            <button class="edit-btn" onclick="window.location.href='task.html';">EDIT</button>
+        </div>
+    </div>
+
+</body>
+</html>

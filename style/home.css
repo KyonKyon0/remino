@@ -1,0 +1,326 @@
+/* Import Font Poppins (Sama seperti Login) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #016B61;       /* Background Utama */
+    --secondary-color: #56A7A0;     /* Warna Aksen Teal Terang */
+    --card-bg: rgba(0, 0, 0, 0.2);  /* Background transparan untuk kartu task */
+    --glass-bg: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(170,220,220,0.9) 100%); /* Efek Glossy user card */
+    --text-light: #ffffff;
+    --text-dark: #2c2c2c;
+    --nav-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar --- */
+.navbar {
+    height: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.1); /* Sedikit gelap transparan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-logo img {
+    height: 40px; /* Sesuaikan ukuran logo */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent; /* Sesuaikan jika ingin background tombol */
+}
+
+/* --- Main Layout --- */
+.main-container {
+    display: flex;
+    flex: 1;
+    padding: 30px 40px;
+    gap: 40px;
+    height: calc(100vh - var(--nav-height));
+}
+
+/* --- Left Section (Illustration & User Info) --- */
+.left-section {
+    flex: 4; /* Mengambil 40% lebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-illustration {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-illustration img {
+    max-width: 100%;      /* Agar gambar tidak melebihi lebar kolom */
+    height: auto;         /* Agar tinggi menyesuaikan secara proporsional */
+    object-fit: contain;  /* Menjaga bentuk gambar agar tidak gepeng */
+    display: block;       /* Menghilangkan celah kecil di bawah gambar */
+}
+
+.hero-text {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.user-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-dark);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.info-card .icon-box {
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.card-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* --- Right Section (To-Do List) --- */
+.right-section {
+    flex: 6; /* Mengambil 60% lebar */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.todo-header {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.todo-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.task-list {
+    flex: 1;
+    overflow-y: auto; /* Agar bisa discroll jika task banyak */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 5px; /* Spasi untuk scrollbar */
+}
+
+/* Scrollbar Customization */
+.task-list::-webkit-scrollbar {
+    width: 6px;
+}
+.task-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.task-card {
+    background-color: var(--primary-color);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    flex: 1;
+    font-size: 1rem;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: inline-block;
+}
+
+.status-dot.red { background-color: #e74c3c; }
+.status-dot.blue { background-color: #3498db; }
+.status-dot.purple { background-color: #9b59b6; }
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+}
+
+.badge.red-text { color: #ff7675; font-weight: bold; }
+.badge.blue-text { color: #74b9ff; font-weight: bold; }
+.badge.purple-text { color: #a29bfe; font-weight: bold; }
+
+/* Bottom Widgets & Edit Button */
+.bottom-widgets {
+    display: flex;
+    gap: 15px;
+}
+
+.mini-widget {
+    flex: 1;
+    background: var(--glass-bg);
+    border-radius: 15px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+}
+
+.widget-icon {
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.widget-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-info span {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.widget-info small {
+    font-size: 0.75rem;
+}
+
+.edit-btn {
+    background-color: #004d40; /* Hijau sangat gelap */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #00382e;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .left-section, .right-section {
+        flex: none;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+}
